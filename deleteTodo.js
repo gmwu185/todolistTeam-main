@@ -1,6 +1,6 @@
 const errorHandle = require('./errorHandle');
 
-function deleteTodo(todos, headers) {
+function deleteTodo(todos, req, res, headers) {
     const id = req.url.split('/').pop()
     const index = todos.findIndex(item => item.id === id)
 
