@@ -4,6 +4,7 @@ function deleteTodo(todos, headers) {
     const id = req.url.split('/').pop()
     const index = todos.findIndex(item => item.id === id)
 
+
     if (index !== -1) {
         todos.splice(index, 1)
         res.writeHead(200, headers);
