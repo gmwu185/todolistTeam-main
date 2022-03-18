@@ -1,4 +1,8 @@
-function errorHandle(res){
+const errorMessage = {
+    '4001': '無此ID',
+}
+
+function errorHandle(res, errorNum) {
     const headers = {
         'Access-Control-Allow-Headers': 'Content-Type, Authorization, Content-Length, X-Requested-With',
         'Access-Control-Allow-Origin': '*',
@@ -9,7 +13,7 @@ function errorHandle(res){
     res.write(JSON.stringify(
         {
             "status": "false",
-            "message": "欄位未填寫正確，或無此 todo ID"
+            "message": errorMessage[errorNum]
         }
     ));
     res.end();
