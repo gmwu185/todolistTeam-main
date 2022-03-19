@@ -1,4 +1,5 @@
 const errorMessage = {
+    '400': '格式錯誤',
     '4001': '無此ID',
 }
 
