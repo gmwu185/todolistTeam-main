@@ -9,4 +9,4 @@ function getTodo(todos, res, headers) {
   res.end();
 }
 
-module.export = getTodo;
+module.exports = getTodo;
