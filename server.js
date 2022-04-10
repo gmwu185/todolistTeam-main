@@ -1,6 +1,6 @@
 const http = require('http');
 const { v4: uuidv4 } = require('uuid');
-const errHandle = require('./errorHandle');
+// const errHandle = require('./errorHandle');
 const getTodo = require('./getTodo');
 const deleteAllTodo = require('./deleteAllTodo');
 const deleteTodo = require('./deleteTodo');

@@ -19,10 +19,10 @@ function postTodo(todos, req, res, body, headers) {
             );
             res.end();
         } else {
-            errHandle(res, '4001');
+            errHandle(res, 400);
         }
     } catch {
-        errHandle(res, '400');
+        errHandle(res, 4002);
     }
 }
 

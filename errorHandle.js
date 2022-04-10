@@ -1,6 +1,7 @@
 const errorMessage = {
-    '400': '格式錯誤',
     '4001': '無此ID',
+    '4002': 'body 解析錯誤',
+    '400': '格式錯誤',
 }
 
 function errorHandle(res, errorNum) {
