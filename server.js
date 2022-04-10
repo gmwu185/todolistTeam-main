@@ -24,7 +24,7 @@ const requestListener = (req, res) => {
     if (req.url == '/todos' && req.method == 'GET') {
         getTodo(todos, res, headers);// getTodo.js
     } else if (req.url == '/todos' && req.method == 'POST') {
-        postTodo(todos,req ,res, headers)// postTodo.js
+        req.on('end', () => postTodo(todos, req, res, body, headers)); // postTodo.js
     } else if (req.url == '/todos' && req.method == 'DELETE') {
         deleteAllTodo(todos, res, headers); // deleteTodo.js
     } else if (req.url.startsWith('/todos/') && req.method == 'DELETE') {
