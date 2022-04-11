@@ -7,20 +7,23 @@ function patchTodo(req, res, headers, body, todos) {
         if (newTitle !== undefined && index !== -1) {
             todos[index].title = newTitle;
             res.writeHead(200, headers);
-            if (todos !== undefined) {
-                res.write(
-                    JSON.stringify({
-                        status: 'success',
-                        data: todos,
-                    })
-                );
-            }
+            res.write(
+                JSON.stringify({
+                    status: 'success',
+                    data: todos,
+                })
+            );
             res.end();
         } else {
-            errHandle(res, 4001);
+            if (index == -1) {
+                errHandle(res, 4001);
+            } 
+            if( newTitle == undefined) {
+                errHandle(res, 400);
+            }
         }
     } catch (err) {
-        errHandle(res, 400);
+        errHandle(res, 4002);
     }
 }
 
